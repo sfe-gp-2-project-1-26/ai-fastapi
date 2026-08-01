@@ -1,7 +1,9 @@
 import pandas as pd
 import os
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+DEFAULT_CSV_PATH = os.path.join(BASE_DIR, "src", "assets", "Electronics_Products.csv")
 
-def prepare_csv(csv_path: str = r"d:\ai-fastapi\src\assets\Electronics_Products.csv"):
+def prepare_csv(csv_path: str = DEFAULT_CSV_PATH):
     if not os.path.exists(csv_path):
         raise FileNotFoundError(f"CSV file not found at {csv_path}")
     
