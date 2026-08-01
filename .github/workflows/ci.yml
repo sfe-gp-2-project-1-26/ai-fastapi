@@ -1,0 +1,21 @@
+name: FastAPI CI
+
+on:
+    push:
+        branches: 
+            - main
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v7
+
+            - name: Setup Python
+              uses: actions/setup-python@v7
+              with:
+                python-version: '3.12'
+                cache: 'pip'
+            
+            - name: Install dependencies
+              run: pip install -r src/requirements.txt
