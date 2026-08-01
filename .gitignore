@@ -1,1 +1,6 @@
 .vscode/
+.env
+qdrant_db/
+src/qdrant_db/
+__pycache__/
+*.pyc
